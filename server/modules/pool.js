@@ -1,7 +1,7 @@
-/*const pg = require('pg');
+const pg = require('pg');
 
 const config = {
-  database: '', 
+  database: 'weekend-to-do-app', 
   host: 'localhost', 
   port: 5432, 
   max: 10, 
@@ -18,4 +18,4 @@ pool.on("error", (err) => {
   console.log("error connecting to postgres", err);
 });
 
-module.exports = pool;*/
+module.exports = pool;
