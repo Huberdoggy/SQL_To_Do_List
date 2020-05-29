@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-    <script type="text/javascript" src="vendors/jquery.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do App</title>
+  <script type="text/javascript" src="vendors/jquery.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    
+  <header>
+    <h1>To Do List</h1>
+  </header>
+  <main>
+    <section>
+      
+      <label>Input New Task</label><input type="text" placeholder="new task" value="" id="taskInput" size="50">
+      <br />
+      <label>Due Date</label><input type="date" name="" value="" id="dueDateInput" size="50">
+      <br />
+      <button type="button" id="createBtn">Create</button>
+    </section>
+    <section>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Complete</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="taskList">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
