@@ -16,9 +16,8 @@ function addClickHandlers() {
 function successColor() {
     colorAlert = $(this).html();
     $(this).addClass('on_success');
-    colorAlert = $(this).children().html();
-    $(this).addClass('goGreen');
-    //$('table > tbody > tr:nth-child(1)')
+    //$(this).addClass('goGreen');
+    $(this).parent().parent().css('color', 'limegreen');
 }
 function handleCreate() {
     console.log('Create button clicked.');
@@ -57,6 +56,7 @@ function renderTasks(tasks) {
         $tr.append(`<td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td>`);
         $('#taskList').append($tr);
     }
+    $('#taskList').append($tr);
 }
 
 
