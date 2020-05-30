@@ -3,23 +3,24 @@
     src: url("/Users/huberdoggy/prime/tier2/Weekend_Challenges/weekend-sql-to-do-list/server/public/css/Symbol Neu for Powerline.ttf");
 }
 
-.on_success{
+.on_success {
     text-decoration: line-through;
     text-decoration-color: black;
 }
 
-.goGreen{
+.goGreen {
     background-color: limegreen;
 }
 
 
-h1{
+h1 {
     font-family: "Symbol Neu Powerline";
     color: whitesmoke;
     font-size: 6em;
 }
 
-.userInputs{
+
+.userInputs {
     color: whitesmoke;
     font-family: "Symbol Neu Powerline";
     font-size: 26px;
@@ -27,24 +28,30 @@ h1{
     font-style: italic;
 }
 
-#createBtn{
+#createBtn {
     color: black;
-    background-color:limegreen;
-    font-family: "Symbol Neu Powerline";
-    font-size: 22px; 
-}
-
-#createBtn:hover{
-    background-color:rgb(42, 171, 222);
+    background-color: limegreen;
     font-family: "Symbol Neu Powerline";
     font-size: 22px;
 }
 
-body{
+#createBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
+}
+
+body {
     background-image: url("dragon.jpg");
     background-size: cover;
-    
+
 }
+
+
+    .main {
+        @include media-breakpoint-up(sm) {
+        text-align: center
+    }
 
 .table {
     font-family: "Symbol Neu Powerline";
@@ -52,42 +59,42 @@ body{
 
 }
 
-#taskList{
+#taskList {
     color: rgb(227, 53, 70);
     font-size: 18px;
     font-weight: bold;
 }
 
-#mainHeadings{
+#mainHeadings {
     text-decoration: underline;
 }
 
-.crossOff{
+.crossOff {
     text-decoration: line-through;
     text-decoration-color: black;
 }
 
-#successBtn{
-color: black;
-background-color:limegreen;
-font-family: "Symbol Neu Powerline";
-font-size: 18px;
+#successBtn {
+    color: black;
+    background-color: limegreen;
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
 }
 
-#successBtn:hover{
-background-color:rgb(42, 171, 222);
-font-family: "Symbol Neu Powerline";
-font-size: 18px;
+#successBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
 }
 
-#delBtn{
+#delBtn {
     color: black;
     font-family: "Symbol Neu Powerline";
     font-size: 18px;
 }
 
-#delBtn:hover{
-background-color:rgb(42, 171, 222);
-font-family: "Symbol Neu Powerline";
-font-size: 18px;
+#delBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
 }
