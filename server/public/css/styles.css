@@ -1,4 +1,13 @@
+@font-face {
+    font-family: "Symbol Neu Powerline";
+    src: url("/Users/huberdoggy/prime/tier2/Weekend_Challenges/weekend-sql-to-do-list/server/public/css/Symbol Neu for Powerline.ttf");
+}
+
 .on_success{
     text-decoration: line-through;
     text-decoration-color: black;
+}
+
+h1{
+    font-family: "Symbol Neu Powerline";
 }

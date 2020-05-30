@@ -7,15 +7,15 @@ let colorAlert = '';
 //For create button
 function addClickHandlers() {
     $('#createBtn').on('click', handleCreate);
-    $('#taskList').on('click', '.completeTask', completeTask);
-    $('#taskList').on('click', '.deleteTask', deleteTask);
-    $('#taskList').on('click', '.completeTask', successColor);
+    $('#taskList').on('click', '#successBtn', completeTask);
+    $('#taskList').on('click', '#delBtn', deleteTask);
+    $('#taskList').on('click', '#successBtn', successColor);
 
 }
 
 function successColor() {
     colorAlert = $(this).html();
-    $(this).addClass('on_success');
+    $(this).toggleClass('on_success');
     $('table > tbody > tr:nth-child(1)').children().css("background-color","limegreen");
 } //change color when clicked
 
@@ -51,8 +51,8 @@ function renderTasks(tasks) {
         $tr.data('currentTask', task);
         $tr.append(`<td>${task.name}</td>`);
         $tr.append(`<td>${task.duedate}</td>`);
-        $tr.append(`<td><button class="completeTask" data-id="${task.id}">Complete</button></td>`);
-        $tr.append(`<td><button class="deleteTask" data-id="${task.id}">Delete</button></td>`);
+        $tr.append(`<td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>`);
+        $tr.append(`<td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td>`);
         $('#taskList').append($tr);
     }
 }
