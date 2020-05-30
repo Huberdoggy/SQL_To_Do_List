@@ -1,3 +1,97 @@
+@font-face {
+    font-family: "Symbol Neu Powerline";
+    src: url("/Users/huberdoggy/prime/tier2/Weekend_Challenges/weekend-sql-to-do-list/server/public/css/Symbol Neu for Powerline.ttf");
+}
+
+.on_success {
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+.goGreen {
+    background-color: limegreen;
+}
 
 
-/*# sourceMappingURL=styles.css.map */
+h1 {
+    font-family: "Symbol Neu Powerline";
+    color: whitesmoke;
+    font-size: 6em;
+}
+
+
+.userInputs {
+    color: whitesmoke;
+    font-family: "Symbol Neu Powerline";
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#createBtn {
+    color: black;
+    background-color: limegreen;
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
+}
+
+#createBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
+}
+
+body {
+    background-image: url("dragon.jpg");
+    background-size: cover;
+
+}
+
+
+.main {}
+
+.table {
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
+
+}
+
+#taskList {
+    color: rgb(227, 53, 70);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#mainHeadings {
+    text-decoration: underline;
+}
+
+.crossOff {
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+#successBtn {
+    color: black;
+    background-color: limegreen;
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
+}
+
+#successBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
+}
+
+#delBtn {
+    color: black;
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
+}
+
+#delBtn:hover {
+    background-color: rgb(42, 171, 222);
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
+}
