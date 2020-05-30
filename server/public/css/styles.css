@@ -8,6 +8,10 @@
     text-decoration-color: black;
 }
 
+.goGreen{
+    background-color: limegreen;
+}
+
 h1{
     font-family: "Symbol Neu Powerline";
 }

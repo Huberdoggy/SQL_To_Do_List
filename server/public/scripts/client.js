@@ -15,10 +15,11 @@ function addClickHandlers() {
 
 function successColor() {
     colorAlert = $(this).html();
-    $(this).toggleClass('on_success');
-    $('table > tbody > tr:nth-child(1)').children().css("background-color","limegreen");
-} //change color when clicked
-
+    $(this).addClass('on_success');
+    colorAlert = $(this).children().html();
+    $(this).addClass('goGreen');
+    //$('table > tbody > tr:nth-child(1)')
+}
 function handleCreate() {
     console.log('Create button clicked.');
     let tasks = {};
@@ -35,6 +36,7 @@ function refreshTasks() {
     }).then(function (response) {
         console.log(response);
         renderTasks(response);
+        
     }).catch(function (error) {
         console.log('error in GET', error);
     });
@@ -48,7 +50,7 @@ function renderTasks(tasks) {
         let task = tasks[i];
         // For each task, append a new row to our table
         let $tr = $('<tr></tr>');
-        $tr.data('currentTask', task);
+        $tr.data(task);
         $tr.append(`<td>${task.name}</td>`);
         $tr.append(`<td>${task.duedate}</td>`);
         $tr.append(`<td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>`);
@@ -105,6 +107,7 @@ function deleteTask() {
         .then((response) => {
             console.log("delete success!");
             refreshTasks();
+
         })
         .catch((err) => {
             console.log("delete failed :-(", err);
