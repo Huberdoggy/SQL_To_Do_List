@@ -34,7 +34,7 @@ We would recommend you spend some time thinking about how to approach this probl
 
 ### Create a Database
 
-[] Be sure to create a new database through Postico. Use the name `weekend-to-do-app`. You will need to use this name in your database connection configuration on your server.
+[x] Be sure to create a new database through Postico. Use the name `weekend-to-do-app`. You will need to use this name in your database connection configuration on your server.
 
 ### Database Structure
 
@@ -46,10 +46,10 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-styling-bootstrap` 
 
-    - [ ]  Add Bootstrap to the front end and style it up!
-      -  Buttons -- make the creation buttons and completion buttons green and the delete red.
-      -  Inputs -- make your text inputs styled in the bootstrap way
-      -  Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
+    - [x]  Add Bootstrap to the front end and style it up!
+      -  Buttons -- make the creation buttons and completion buttons green and the delete red. --> I like the 'hover' effect
+      [x]-  Inputs -- make your text inputs styled in the bootstrap way
+      []-  Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
 
 - `feature-confirm-delete`
 

@@ -18,7 +18,9 @@ function successColor() {
     $(this).addClass('on_success');
     //$(this).addClass('goGreen');
     $(this).parent().parent().css('color', 'limegreen');
+    $(this).parent().parent().addClass('crossOff');
 }
+
 function handleCreate() {
     console.log('Create button clicked.');
     let tasks = {};

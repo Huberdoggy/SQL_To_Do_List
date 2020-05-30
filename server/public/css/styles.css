@@ -27,8 +27,15 @@ h1{
     font-style: italic;
 }
 
+#createBtn{
+    color: black;
+    background-color:limegreen;
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px; 
+}
+
 #createBtn:hover{
-    background-color: limegreen;
+    background-color:rgb(42, 171, 222);
     font-family: "Symbol Neu Powerline";
     font-size: 22px;
 }
@@ -55,13 +62,32 @@ body{
     text-decoration: underline;
 }
 
+.crossOff{
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+
+#successBtn{
+color: black;
+background-color:limegreen;
+font-family: "Symbol Neu Powerline";
+font-size: 18px;
+}
+
 #successBtn:hover{
-background-color: limegreen;
+background-color:rgb(42, 171, 222);
 font-family: "Symbol Neu Powerline";
 font-size: 18px;
 }
 
 #delBtn{
+    color: black;
     font-family: "Symbol Neu Powerline";
     font-size: 18px;
+}
+
+#delBtn:hover{
+background-color:rgb(42, 171, 222);
+font-family: "Symbol Neu Powerline";
+font-size: 18px;
 }
