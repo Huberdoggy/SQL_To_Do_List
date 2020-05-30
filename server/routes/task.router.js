@@ -38,10 +38,10 @@ router.post('/',  (req, res) => {
 // Updates a task to show that it has been completed
 // Request must include a parameter indicating what task to update - the id
 // Request body must include the content to update - the status
-router.put('/:taskId',  (req, res) => {
-    let task = req.body; // Task with updated content
+router.put('/:id',  (req, res) => {
+    //let task = req.body; // Task with updated content
     let taskId = req.params.id; // id of the task to update
-    console.log(`Updating task ${taskId} with `, task);
+    console.log(`Updating task with id of ${taskId}`);
     // TODO - REPLACE BELOW WITH YOUR CODE
     let queryText = '';
     if(req.body.checklist === 'Complete'){
@@ -64,17 +64,14 @@ router.put('/:taskId',  (req, res) => {
 // TODO - DELETE 
 // Removes a task...
 // Request must include a parameter indicating what task to update - the id
-router.delete('/:taskId',  (req, res) => {
-    let taskId = req.params.id; // id of the thing to delete
-    console.log('Delete route called with id of', taskId);
+router.delete('/:id', (req, res) => {
+    let buttonElement = req.params.id; // id of the thing to delete
+    console.log(`Delete route called on task with id of ${buttonElement}`);
     // TODO - REPLACE BELOW WITH YOUR CODE
-    let queryText = `
-      DELETE FROM "tasks"
-      WHERE id = $1
-      `;
+    let queryText = `DELETE FROM "tasks" WHERE id=$1`;
   
     // Send query to the DB
-    pool.query(queryText, [taskId])
+    pool.query(queryText, [buttonElement])
         // Handle :-) result
         .then((result) => {
             console.log('db is happy, sent back a response');

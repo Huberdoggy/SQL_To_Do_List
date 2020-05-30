@@ -4,7 +4,7 @@ CREATE TABLE "tasks" (
 	"id" SERIAL PRIMARY KEY, -- GIVES EACH TASK A UNIQUE NUMBER!!!
 	"name" VARCHAR(250) NOT NULL,
 	"duedate" DATE,
-	"status" VARCHAR(80)
+	"status" VARCHAR(80) DEFAULT 'Incomplete'
 );
 
 INSERT INTO "tasks" ("name", "duedate") VALUES ('Finish Weekend Challenge 3', '05-31-2020');

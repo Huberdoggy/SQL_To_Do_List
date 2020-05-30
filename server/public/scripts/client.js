@@ -12,7 +12,7 @@ function addClickHandlers() {
     $('#taskList').on('click', '.completeTask', function () {
         alert = $(this).html();
         //change color when clicked
-        $(this).parent().css('background-color', 'green');
+        $(this).css('background-color', 'green');
         
     });
 }
@@ -22,7 +22,7 @@ function handleCreate() {
     let tasks = {};
     tasks.name = $('#taskInput').val();
     tasks.duedate = $('#dueDateInput').val();
-    addTask(task);
+    addTask(tasks);
   }
 
 // refreshTasks will get all tasks from the server and render to page
@@ -43,22 +43,21 @@ function renderTasks(tasks) {
     $('#taskList').empty();
   //empty table before for loop
     for(let i = 0; i < tasks.length; i += 1) {
-      let currentTask = tasks[i];
+      let task = tasks[i];
       // For each task, append a new row to our table
       let $tr = $('<tr></tr>');
-      $tr.data('currentTask', currentTask);
-      $tr.append(`<td>${currentTask.name}</td>`);
-      $tr.append(`<td>${currentTask.duedate}</td>`);
-      $tr.append(`<td><button class="completeTask" data-id="${currentTask.id}">Complete</button></td>`);
-      $tr.append(`<td><button class="deleteTask" data-id="${currentTask.id}">Delete</button></td>`);
+      $tr.data('currentTask', task);
+      $tr.append(`<td>${task.name}</td>`);
+      $tr.append(`<td>${task.duedate}</td>`);
+      $tr.append(`<td><button class="completeTask" data-id="${task.id}">Complete</button></td>`);
+      $tr.append(`<td><button class="deleteTask" data-id="${task.id}">Delete</button></td>`);
       $('#taskList').append($tr);
     }
   }
 
 
-function addTask() {
-  // adds a task to the database
 function addTask(taskToAdd) {
+  // adds a task to the database
     $.ajax({
       type: 'POST',
       url: '/tasks',
@@ -71,15 +70,14 @@ function addTask(taskToAdd) {
         alert('Unable to add task at this time. Please try again later.');
       });
   }    
-  }
 
   function completeTask() {
     let buttonElement = $(this);
-    let taskId = $(buttonElement).data('id');
-    console.log('completeTask', taskId);
+    let id = $(buttonElement).data('id');
+    console.log('completeTask', id);
     $.ajax({
       method: 'PUT',
-      url: `/tasks/${taskId}`,
+      url: `/tasks/${id}`,
       data: {
         checklist: 'Complete'
       }
@@ -93,10 +91,11 @@ function addTask(taskToAdd) {
   //function deleteTask
   function deleteTask() {
     let buttonElement = $(this);
-      let taskId = buttonElement.data("id");
+    let id = $(buttonElement).data('id');
+      console.log('deleteTask', id);
     $.ajax({
       type: 'DELETE',
-      url: `/tasks/${taskId}`
+      url: `/tasks/${id}`
     })
       .then((response) => {
         console.log("delete success!");
