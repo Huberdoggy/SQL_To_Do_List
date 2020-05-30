@@ -27,7 +27,8 @@ h1{
     font-style: italic;
 }
 
-#createBtn{
+#createBtn:hover{
+    background-color: limegreen;
     font-family: "Symbol Neu Powerline";
     font-size: 22px;
 }
@@ -54,7 +55,8 @@ body{
     text-decoration: underline;
 }
 
-#successBtn{
+#successBtn:hover{
+background-color: limegreen;
 font-family: "Symbol Neu Powerline";
 font-size: 18px;
 }
