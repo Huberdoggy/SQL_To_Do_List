@@ -15,8 +15,51 @@
 
 h1{
     font-family: "Symbol Neu Powerline";
+    color: whitesmoke;
+    font-size: 6em;
+}
+
+.userInputs{
+    color: whitesmoke;
+    font-family: "Symbol Neu Powerline";
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#createBtn{
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
 }
 
 body{
+    background-image: url("dragon.jpg");
+    background-size: cover;
     
+}
+
+.table {
+    font-family: "Symbol Neu Powerline";
+    font-size: 22px;
+
+}
+
+#taskList{
+    color: rgb(227, 53, 70);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#mainHeadings{
+    text-decoration: underline;
+}
+
+#successBtn{
+font-family: "Symbol Neu Powerline";
+font-size: 18px;
+}
+
+#delBtn{
+    font-family: "Symbol Neu Powerline";
+    font-size: 18px;
 }

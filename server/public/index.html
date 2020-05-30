@@ -19,10 +19,11 @@
   <main>
     <section>
       
-      <label>Input New Task</label><input type="text" placeholder="new task" value="" id="taskInput" size="50">
+      <label class="userInputs">Input New Task</label><input type="text" placeholder="new task" value="" id="taskInput" size="50">
       <br />
-      <label>Due Date</label><input type="date" name="" value="" id="dueDateInput" size="50">
+      <label class="userInputs">Due Date</label><input type="date" name="" value="" id="dueDateInput" size="50">
       <br />
+      <br>
       <button class="btn btn-primary btn-dark btn-lg" type="button" id="createBtn">Create</button>
     </section>
     <br><br>
@@ -30,7 +31,7 @@
       <div>
         <table class="table table-striped table-dark">
           <thead>
-            <tr>
+            <tr id="mainHeadings">
               <th>Task</th>
               <th>Due Date</th>
               <th>Complete</th>

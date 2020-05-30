@@ -48,10 +48,13 @@ function renderTasks(tasks) {
     for (let i = 0; i < tasks.length; i += 1) {
         let task = tasks[i];
         // For each task, append a new row to our table
+        ///LEARNED SOMETHING COOL --> the date toString() method.
+        let d = new Date(`${task.duedate}`);
+        let n = d.toString();
         let $tr = $('<tr></tr>');
         $tr.data(task);
         $tr.append(`<td>${task.name}</td>`);
-        $tr.append(`<td>${task.duedate}</td>`);
+        $tr.append(`<td>${n}</td>`);
         $tr.append(`<td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>`);
         $tr.append(`<td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td>`);
         $('#taskList').append($tr);
