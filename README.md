@@ -1,9 +1,24 @@
-# Project Name
+Kyle's To-Do List
+Kyle's To-Do List is an application built utilizing the Prime software "stack" and can be used as a simple checklist for tracking task statuses.
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+FEATURE
+With this app, user will be able to:
 
-## Description
+Add new todo from input field to the list and to database
+Delete a todo from the list and from database
+Toggle the complete button and set a task as "Completed".
+SweetAlerts prompt alert to confirm the delete decision.
+Enter and show due date
 
-Your project description goes here. What problem did you solve? How did you solve it?
+DATABASE SETUP
+Create a new database with the name weekend-to-do-app. And run the sql from the database file.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+INSTALL AND RUN
+npm install
+npm start
+
+BUILT WITH
+jQuery/Vanilla JS
+Node/Express
+Simple Bootstrap
+PostgreSQL
