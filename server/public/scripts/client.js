@@ -4,13 +4,16 @@ $(document).ready(function () {
     addClickHandlers();
 });
 let colorAlert = '';
+
+
+
 //For create button
 function addClickHandlers() {
     $('#createBtn').on('click', handleCreate);
     $('#taskList').on('click', '#successBtn', completeTask);
-    $('#taskList').on('click', '#delBtn', deleteTask);
     $('#taskList').on('click', '#successBtn', successColor);
-
+    $('#taskList').on('click', '#delBtn', deleteTask);
+    $('#taskList').on('click', '#delBtn', runSwal);
 }
 
 function successColor() {
@@ -99,12 +102,40 @@ function completeTask() {
         console.log("error: ", err);
     });
 }
+    
+function runSwal() {
+     ///ADD SWEETALERT FUNCTIONALITY////////
+     let $scr = $(`<script>${swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this task!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your task has been deleted!", {
+            icon: "success",
+          });
+        } else {
+            swal("Your task has been preserved!");
+            
+        }
+      })
+}</script>`);
+    
+    $('body').append($scr);
+
+
+}
+
 
 //function deleteTask
 function deleteTask() {
     let buttonElement = $(this);
     let id = $(buttonElement).data('id');
     console.log('deleteTask', id);
+    runSwal();
     $.ajax({
             type: 'DELETE',
             url: `/tasks/${id}`
