@@ -13,7 +13,7 @@ function addClickHandlers() {
     $('#taskList').on('click', '#successBtn', completeTask);
     $('#taskList').on('click', '#successBtn', successColor);
     $('#taskList').on('click', '#delBtn', deleteTask);
-    $('#taskList').on('click', '#delBtn', runSwal);
+    //$('#taskList').on('click', '#delBtn', runSwal);
 }
 
 function successColor() {
@@ -118,7 +118,9 @@ function runSwal() {
             icon: "success",
           });
         } else {
-            swal("Your task has been preserved!");
+            swal("Your task has been preserved!", {
+                icon: "info",
+            });
             
         }
       })
