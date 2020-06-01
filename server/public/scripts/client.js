@@ -40,7 +40,7 @@ function refreshTasks() {
     }).then(function (response) {
         console.log(response);
         renderTasks(response);
-        
+
     }).catch(function (error) {
         console.log('error in GET', error);
     });
@@ -102,34 +102,6 @@ function completeTask() {
         console.log("error: ", err);
     });
 }
-    
-function runSwal() {
-     ///ADD SWEETALERT FUNCTIONALITY////////
-     let $scr = $(`<script>${swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this task!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! Your task has been deleted!", {
-            icon: "success",
-          });
-        } else {
-            swal("Your task has been preserved!", {
-                icon: "info",
-            });
-            
-        }
-      })
-}</script>`);
-    
-    $('body').append($scr);
-
-
-}
 
 
 //function deleteTask
@@ -137,17 +109,32 @@ function deleteTask() {
     let buttonElement = $(this);
     let id = $(buttonElement).data('id');
     console.log('deleteTask', id);
-    runSwal();
     $.ajax({
-            type: 'DELETE',
-            url: `/tasks/${id}`
-        })
-        .then((response) => {
-            console.log("delete success!");
-            refreshTasks();
+        type: 'DELETE',
+        url: `/tasks/${id}`
+    });
+    let $scr = $(`<script>${swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this task!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Poof! Your task has been deleted!", {
+                icon: "success",
+              });
+              refreshTasks();
+            } else {
+                swal("Your task has been preserved!", {
+                    icon: "info",
+                });
+                
+            }
+          })
+    }</script>`);
 
-        })
-        .catch((err) => {
-            console.log("delete failed :-(", err);
-        });
+    $('body').append($scr);
+
 }
