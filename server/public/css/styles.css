@@ -63,6 +63,7 @@ body {
 }
 
 #mainHeadings {
+    text-align: center;
     text-decoration: underline;
 }
 

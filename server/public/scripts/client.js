@@ -11,18 +11,9 @@ let colorAlert = '';
 function addClickHandlers() {
     $('#createBtn').on('click', handleCreate);
     $('#taskList').on('click', '#successBtn', completeTask);
-    //$('#taskList').on('click', '#successBtn');
     $('#taskList').on('click', '#delBtn', deleteTask);
-    //$('#taskList').on('click', '#delBtn', runSwal);
-}
 
-/*function successColor() {
-    colorAlert = $(this).html();
-    $(this).addClass('on_success');
-    //$(this).addClass('goGreen');
-    $(this).parent().parent().css('color', 'limegreen');
-    $(this).parent().parent().addClass('crossOff');
-}*/
+}
 
 function handleCreate() {
     console.log('Create button clicked.');
@@ -60,8 +51,8 @@ function renderTasks(tasks) {
         <td>${task.name}</td>
         <td> ${n}</td>
         <td>${showCompleteStatus(task)}</td>
-        <td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button><td>
-        <td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td></tr>`);
+        <td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>
+        <td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn"data-id="${task.id}">Delete</button></td></tr>`);
 
         if (task.status) {
             rowHtml.addClass('crossOff');
@@ -73,11 +64,11 @@ function renderTasks(tasks) {
 
 function showCompleteStatus(task) {
     if (task.status) {
-      return 'Completed';
+        return 'Completed';
     } else {
-      return 'Incomplete';
+        return 'Incomplete';
     }
-  }
+}
 
 function addTask(taskToAdd) {
     // adds a task to the database
@@ -103,11 +94,9 @@ function completeTask() {
     $.ajax({
         method: 'PUT',
         url: `/tasks/${id}`,
-        //data: {
-          //  checklist: 'Complete'
-        //}
+
     }).then((response) => {
-        //successColor();
+
         refreshTasks();
     }).catch((err) => {
         console.log("error: ", err);
@@ -124,28 +113,25 @@ function deleteTask() {
         type: 'DELETE',
         url: `/tasks/${id}`
     });
-    let $scr = $(`<script>${swal({
+
+    swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this task!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
-          })
-          .then((willDelete) => {
+        })
+        .then((willDelete) => {
             if (willDelete) {
-              swal("Poof! Your task has been deleted!", {
-                icon: "success",
-              });
-              refreshTasks();
+                swal("Poof! Your task has been deleted!", {
+                    icon: "success",
+                });
+                refreshTasks();
             } else {
                 swal("Your task has been preserved!", {
                     icon: "info",
                 });
 
             }
-          })
-    }</script>`);
-
-    $('body').append($scr);
-
+        });
 }
