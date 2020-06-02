@@ -96,3 +96,10 @@ body {
     font-family: "Symbol Neu Powerline";
     font-size: 18px;
 }
+
+footer {
+    color: whitesmoke;
+    font-family: "Symbol Neu Powerline";
+    font-size: 20px;
+    font-style: normal;
+}
