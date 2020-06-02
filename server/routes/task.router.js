@@ -15,16 +15,16 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     });
   });
-  
+
 // Adds a new task to the list of tasks
 // Request body must be a task object with a name and due date.
 router.post('/',  (req, res) => {
     let newTask = req.body;
     console.log('Adding task', newTask);
-  
-    let queryText = `INSERT INTO "tasks" ("name", "duedate")
-                     VALUES ($1, $2);`;
-    pool.query(queryText, [newTask.name, newTask.duedate])
+
+    let queryText = `INSERT INTO "tasks" ("name", "duedate", "status")
+                     VALUES ($1, $2, $3);`;
+    pool.query(queryText, [newTask.name, newTask.duedate, newTask.status])
       .then(result => {
         res.sendStatus(201);
       })
@@ -33,7 +33,7 @@ router.post('/',  (req, res) => {
         res.sendStatus(500);
       });
   });
-  
+
  //PUT
 // Updates a task to show that it has been completed
 // Request must include a parameter indicating what task to update - the id
@@ -44,11 +44,8 @@ router.put('/:id', (req, res) => {
   console.log(`Updating task with id of ${taskId}`);
   // TODO - REPLACE BELOW WITH YOUR CODE
   let queryText = '';
-  if (req.body.checklist === 'Complete') {
-    queryText = `UPDATE "tasks" SET "status" = 'Complete!' WHERE id=$1`;
-  } else if (req.body.checklist !== 'Complete') {
-    queryText = `UPDATE "tasks" SET "status" = 'Incomplete' WHERE id=$1`;
-  }
+  //if (req.body.checklist === 'Complete') {
+    queryText = `UPDATE "tasks" SET "status" = 'TRUE' WHERE id=$1`;
   // Send query to the DB
   pool.query(queryText, [taskId])
     // Handle :-) result
@@ -62,8 +59,8 @@ router.put('/:id', (req, res) => {
       res.sendStatus(500);
     })
 });
-  
-// TODO - DELETE 
+
+// TODO - DELETE
 // Removes a task...
 // Request must include a parameter indicating what task to update - the id
 router.delete('/:id', (req, res) => {
@@ -71,7 +68,7 @@ router.delete('/:id', (req, res) => {
     console.log(`Delete route called on task with id of ${buttonElement}`);
     // TODO - REPLACE BELOW WITH YOUR CODE
     let queryText = `DELETE FROM "tasks" WHERE id=$1`;
-  
+
     // Send query to the DB
     pool.query(queryText, [buttonElement])
         // Handle :-) result
@@ -84,7 +81,7 @@ router.delete('/:id', (req, res) => {
             console.log('uh oh, db is mad. Dont make it mad', err);
             res.sendStatus(500);
         });
-  
+
   });
 
 

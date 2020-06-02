@@ -11,18 +11,18 @@ let colorAlert = '';
 function addClickHandlers() {
     $('#createBtn').on('click', handleCreate);
     $('#taskList').on('click', '#successBtn', completeTask);
-    $('#taskList').on('click', '#successBtn', successColor);
+    //$('#taskList').on('click', '#successBtn');
     $('#taskList').on('click', '#delBtn', deleteTask);
     //$('#taskList').on('click', '#delBtn', runSwal);
 }
 
-function successColor() {
+/*function successColor() {
     colorAlert = $(this).html();
     $(this).addClass('on_success');
     //$(this).addClass('goGreen');
     $(this).parent().parent().css('color', 'limegreen');
     $(this).parent().parent().addClass('crossOff');
-}
+}*/
 
 function handleCreate() {
     console.log('Create button clicked.');
@@ -56,17 +56,28 @@ function renderTasks(tasks) {
         ///LEARNED SOMETHING COOL --> the date toString() method.
         let d = new Date(`${task.duedate}`);
         let n = d.toString();
-        let $tr = $('<tr></tr>');
-        $tr.data(task);
-        $tr.append(`<td>${task.name}</td>`);
-        $tr.append(`<td>${n}</td>`);
-        $tr.append(`<td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>`);
-        $tr.append(`<td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td>`);
-        $('#taskList').append($tr);
+        let rowHtml = $(`<tr>
+        <td>${task.name}</td>
+        <td> ${n}</td>
+        <td>${showCompleteStatus(task)}</td>
+        <td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button><td>
+        <td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn" data-id="${task.id}">Delete</button></td></tr>`);
+
+        if (task.status) {
+            rowHtml.addClass('crossOff');
+            rowHtml.css('color', 'limegreen');
+        }
+        $('#taskList').append(rowHtml);
     }
-    $('#taskList').append($tr);
 }
 
+function showCompleteStatus(task) {
+    if (task.status) {
+      return 'Completed';
+    } else {
+      return 'Incomplete';
+    }
+  }
 
 function addTask(taskToAdd) {
     // adds a task to the database
@@ -92,11 +103,11 @@ function completeTask() {
     $.ajax({
         method: 'PUT',
         url: `/tasks/${id}`,
-        data: {
-            checklist: 'Complete'
-        }
+        //data: {
+          //  checklist: 'Complete'
+        //}
     }).then((response) => {
-        successColor();
+        //successColor();
         refreshTasks();
     }).catch((err) => {
         console.log("error: ", err);
@@ -130,7 +141,7 @@ function deleteTask() {
                 swal("Your task has been preserved!", {
                     icon: "info",
                 });
-                
+
             }
           })
     }</script>`);
