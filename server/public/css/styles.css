@@ -28,6 +28,14 @@ h1 {
     font-style: italic;
 }
 
+#taskInput{
+    margin-left: 6px;
+}
+
+#dueDateInput{
+    margin-left: 6px;
+}
+
 #createBtn {
     color: black;
     background-color: limegreen;
