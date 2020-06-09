@@ -1,5 +1,9 @@
 ## Kyle's To-Do List:
 
+**NOW LIVE ON HEROKU!**
+
+**http://pure-citadel-14213.herokuapp.com/**
+
 Kyle's To-Do List is an application built utilizing the Prime software "stack" and can be used as a simple checklist for tracking task statuses.
 
 ## With this app, user will be able to:
@@ -10,19 +14,17 @@ Kyle's To-Do List is an application built utilizing the Prime software "stack" a
 * SweetAlerts prompt alert to confirm the delete decision.
 * Enter and show due date
 
-## 
-
 **DATABASE SETUP: -->**
 Create a new database with the name weekend-to-do-app. And run the sql from the database file.
 ##
 
-## 
+##
 
 **INSTALL AND RUN: -->**
 - npm install
 - npm start
 
-## 
+##
 
 **BUILT WITH: -->**
 - jQuery/Vanilla JS
