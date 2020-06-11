@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to (SQL_To_Do_List) 👋</h1>
+<h1 align="center">Welcome to Kyle's SQL To_Do_List 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/Huberdoggy/SQL_To_Do_List/graphs/commit-activity" target="_blank">
@@ -48,7 +48,7 @@ npm run test
 
 👤 **Kyle Huber**
 
-* Github: [@\(Huberdoggy\)](https://github.com/\(Huberdoggy\))
+* Github: [@\Huberdoggy\](https://github.com/\(Huberdoggy\))
 
 ## 🤝 Contributing
 
