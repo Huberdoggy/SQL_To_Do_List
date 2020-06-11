@@ -1,33 +1,52 @@
-## Kyle's To-Do List:
+<h1 align="center">Welcome to (SQL_To_Do_List) 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/Huberdoggy/SQL_To_Do_List/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/Huberdoggy/SQL_To_Do_List/blob/master/LICENSE" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/github/license/\(Huberdoggy\)/(SQL_To_Do_List)" />
+  </a>
+</p>
 
-**NOW LIVE ON HEROKU!**
+### 🏠 [Homepage](https://github.com/Huberdoggy/SQL_To_Do_List#readme)
 
-**http://pure-citadel-14213.herokuapp.com/**
+## Install
 
-Kyle's To-Do List is an application built utilizing the Prime software "stack" and can be used as a simple checklist for tracking task statuses.
+```sh
+npm install
+```
 
-## With this app, user will be able to:
+## Usage
 
-* Add new to-do from input field to the list into the database
-* Delete a to-do from the list and from the database
-* Toggle the complete button and set a task as "Completed".
-* SweetAlerts prompt alert to confirm the delete decision.
-* Enter and show due date
+```sh
+npm run start
+```
 
-**DATABASE SETUP: -->**
-Create a new database with the name weekend-to-do-app. And run the sql from the database file.
-##
+## Run tests
 
-##
+```sh
+npm run test
+```
 
-**INSTALL AND RUN: -->**
-- npm install
-- npm start
+## Author
 
-##
+👤 **Kyle Huber**
 
-**BUILT WITH: -->**
-- jQuery/Vanilla JS
-- Node/Express
-- Basic Bootstrap
-- PostgreSQL
+* Github: [@\(Huberdoggy\)](https://github.com/\(Huberdoggy\))
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Huberdoggy/SQL_To_Do_List/issues). You can also take a look at the [contributing guide](https://github.com/Huberdoggy/SQL_To_Do_List/blob/master/CONTRIBUTING.md).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2020 [Kyle Huber](https://github.com/\(Huberdoggy\)).<br />
+This project is [ISC](https://github.com/Huberdoggy/SQL_To_Do_List/blob/master/LICENSE) licensed.
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
