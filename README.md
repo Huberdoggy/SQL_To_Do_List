@@ -11,6 +11,21 @@
 
 ### 🏠 [Homepage](https://github.com/Huberdoggy/SQL_To_Do_List#readme)
 
+## Screenshots
+
+![Screen Shot 2020-06-11 at 9 00 16 AM](https://user-images.githubusercontent.com/16614357/84395134-79e14400-abc3-11ea-81e1-59b9c21d8f82.png)
+![Screen Shot 2020-06-11 at 8 59 56 AM](https://user-images.githubusercontent.com/16614357/84395143-7cdc3480-abc3-11ea-9776-a1924ddd5667.png)
+
+## With this app, user will be able to:
+* SweetAlerts prompt alert to confirm the delete decision.
+* Enter and show due date
+
+##
+
+**DATABASE SETUP: -->**
+Create a new database with the name weekend-to-do-app. And run the sql from the database file.
+##
+
 ## Install
 
 ```sh
