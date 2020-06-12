@@ -1,7 +1,7 @@
 {
   "name": "weekend-sql-to-do-list",
   "version": "1.0.0",
-  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "description": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
