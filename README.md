@@ -13,6 +13,10 @@
 
 ### 🏠 [Homepage](https://github.com/Huberdoggy/SQL_To_Do_List#readme)
 
+## Screenshots
+![Screen Shot 2020-06-12 at 2 02 28 PM](https://user-images.githubusercontent.com/16614357/84537606-b1301d80-acb5-11ea-8159-6269ee89fb7c.png)
+![Screen Shot 2020-06-12 at 2 02 41 PM](https://user-images.githubusercontent.com/16614357/84537610-b2614a80-acb5-11ea-9a15-db29d6c3703d.png)
+
 ## Install
 
 ```sh
@@ -30,6 +34,11 @@ npm run start
 ```sh
 npm run test
 ```
+## Built With
+- Node.js
+- JQuery/HTML
+- Javascript
+- SQL/Postgresql
 
 ## Author
 
