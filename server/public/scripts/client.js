@@ -20,6 +20,7 @@ function handleCreate() {
     let tasks = {};
     tasks.name = $('#taskInput').val();
     tasks.duedate = $('#dueDateInput').val();
+    tasks.status = false;
     addTask(tasks);
 }
 
@@ -54,7 +55,7 @@ function renderTasks(tasks) {
         <td><button class="successBtn btn-sm"id="successBtn" data-id="${task.id}">Complete</button></td>
         <td><button class="btn btn-secondary btn-danger btn-sm"id="delBtn"data-id="${task.id}">Delete</button></td></tr>`);
 
-        if (task.status) {
+        if (task.status !== false) {
             rowHtml.addClass('crossOff');
             rowHtml.css('color', 'limegreen');
         }
@@ -63,7 +64,7 @@ function renderTasks(tasks) {
 }
 
 function showCompleteStatus(task) {
-    if (task.status) {
+    if (task.status !== false) {
         return 'Completed';
     } else {
         return 'Incomplete';
@@ -108,12 +109,6 @@ function completeTask() {
 function deleteTask() {
     let buttonElement = $(this);
     let id = $(buttonElement).data('id');
-    console.log('deleteTask', id);
-    $.ajax({
-        type: 'DELETE',
-        url: `/tasks/${id}`
-    });
-
     swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this task!",
@@ -123,15 +118,21 @@ function deleteTask() {
         })
         .then((willDelete) => {
             if (willDelete) {
+
+                $.ajax({
+                type: 'DELETE',
+                url: `/tasks/${id}`
+                });
+                refreshTasks();
                 swal("Poof! Your task has been deleted!", {
                     icon: "success",
                 });
-                refreshTasks();
             } else {
                 swal("Your task has been preserved!", {
                     icon: "info",
                 });
 
             }
+
         });
 }
